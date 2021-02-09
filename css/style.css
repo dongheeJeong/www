@@ -1,0 +1,14 @@
+html {
+  background: #fff7e9;
+}
+
+article {
+  border: 1px solid grey;
+  background: #ffffff;
+  border-radius: 30px;
+}
+
+.credit {
+  text-align: center;
+  color: grey;
+}
