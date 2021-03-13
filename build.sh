@@ -1,6 +1,5 @@
 #!/bin/bash
 set -e
-#set -x
 
 ROOT="build"
 TEMPLATE="template.html.j2"
@@ -12,7 +11,7 @@ mkdir -p ${ROOT}
 
 
 echo "Copy css/ in ${ROOT}/"
-cp -r css ${ROOT}/css
+cp -r css ${ROOT}
 
 
 echo "Copy mics/ in ${ROOT}/"
@@ -26,7 +25,8 @@ for DATA in data/*; do
   path="${ROOT}/$(cat ${DATA} | yq -r .path)"
 
   mkdir -p ${path}
-  cp -r css "${path}/css"
+  # Copy css/ in every subdirectory
+  cp -r css ${path}
 
   jinja -d ${DATA} ${TEMPLATE} -o ${path}/${fname}.html 1>&2 2>/dev/null
   echo "Template done ${fname}.html at ${path}"
