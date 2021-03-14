@@ -9,6 +9,8 @@ echo "Delete ${ROOT}/ and re-generate everything"
 rm -rf ${ROOT}
 mkdir -p ${ROOT}
 
+echo "Copy img/ in ${ROOT}/"
+cp -r img ${ROOT}
 
 echo "Copy css/ in ${ROOT}/"
 cp -r css ${ROOT}
