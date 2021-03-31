@@ -1,34 +1,27 @@
 #!/bin/bash
 set -e
 
-ROOT="build"
-TEMPLATE="template.html.j2"
+BUILD="build"
+clear
 
 
-echo "Delete ${ROOT}/ and re-generate everything"
-rm -rf ${ROOT}
-mkdir -p ${ROOT}
+rm -rf "${BUILD}"
+mkdir -p "${BUILD}"
+cp -r css "${BUILD}/"
+cp -r img "${BUILD}/"
+
+echo "<!DOCTYPE html> <html><h1>This page is for website health check !</h1></html>" > $BUILD/health.html
 
 
-echo "Copy css/ in ${ROOT}/"
-cp -r css ${ROOT}
+markdowns="$(find . -name "*.md" | sed -e 's|^\./||')"
+for md in $markdowns; do
 
+  dir="$(dirname "${md}")"
+  mkdir -p "${BUILD}/${dir}"
 
-echo "Copy mics/ in ${ROOT}/"
-cp misc/* ${ROOT}/
+  output="${BUILD}/$(echo "${md}" | cut -f1 -d'.').html"
+  pandoc "${md}" -o "${output}" --template template.html 2> /dev/null
 
-
-echo ""
-echo "Start Template all from data/ to ${ROOT}/"
-for DATA in data/*; do
-  fname="$(echo ${DATA} | cut -d'/' -f2 | cut -d'.' -f1)"
-  path="${ROOT}/$(cat ${DATA} | yq -r .path)"
-
-  mkdir -p ${path}
-  # Copy css/ in every subdirectory
-  cp -r css ${path}
-
-  jinja -d ${DATA} ${TEMPLATE} -o ${path}/${fname}.html 1>&2 2>/dev/null
-  echo "Template done ${fname}.html at ${path}"
+  echo "${md} -> ${output}"
 done
 

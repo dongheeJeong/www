@@ -2,9 +2,9 @@
 <html>
   <head>
     <title>Donghee, Jeong's Website</title>
-    <meta charset="utf-8"/>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/github-markdown.css">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/github-markdown.css">
   </head>
 
   <style>
@@ -23,14 +23,7 @@
   </style>
 
   <article class="markdown-body">
-
-    {{ content }}
-
-    <hr>
-    {% if goto_home is true %}
-    <p><a href="http://www.dongheejeong.xyz">홈으로</a></p>
-    {% endif %}
-
+    ${body}
   </article>
   <p class="credit markdown-body"><small>This website uses <a href="https://github.com/hyrious/github-markdown-css">hyrious/github-markdown-css</a> stylesheet.</small></p>
 </html>
