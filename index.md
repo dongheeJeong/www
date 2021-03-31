@@ -6,11 +6,6 @@
 
 📧 [mail@dongheejeong.xyz](mailto:mail@dongheejeong.xyz)
 
-## Article
-
-* [이 사이트 배포 방식](article/site-build.html)
-
-
 ## 나의 링크들
 
 * [AWS WorkMail 웹 메일](https://webmail.mail.us-east-1.awsapps.com/workmail/?organization=dongheejeong-xyz){target="_blank"}
