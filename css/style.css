@@ -6,6 +6,12 @@ article {
   border-radius: 30px;
 }
 
+figcaption {
+  font-size: small;
+  font-style: italic;
+  text-align: center;
+}
+
 .credit {
   text-align: center;
   color: grey;
