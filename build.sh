@@ -2,8 +2,6 @@
 set -e
 
 BUILD="build"
-clear
-
 
 rm -rf "${BUILD}"
 mkdir -p "${BUILD}"
