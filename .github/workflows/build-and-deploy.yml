@@ -1,0 +1,10 @@
+name: Build and Deploy WWW
+on: [push]
+jobs:
+  Uuild-and-deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Updat apt
+        run: apt-get update -y
+      - name: Install pandoc
+        run: apt-get install -y pandoc
