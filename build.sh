@@ -11,8 +11,6 @@ mkdir -p "${BUILD}"
 cp -r css "${BUILD}/"
 cp -r img "${BUILD}/"
 
-echo "<!DOCTYPE html> <html><h1>This page is for website health check !</h1></html>" > $BUILD/health.html
-
 
 markdowns="$(find . -name "*.md" | sed -e 's|^\./||')"
 for md in $markdowns; do
