@@ -16,3 +16,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
       - run: ls -al
+      - name: Build
+        run: bash ./build.sh
+      - run: ls -al
+      - run: ls -al build
