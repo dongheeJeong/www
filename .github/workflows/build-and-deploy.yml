@@ -5,7 +5,7 @@ on:
       - master
 jobs:
   Build-and-deploy:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-20.04 # https://github.com/actions/virtual-environments/blob/main/images/linux/Ubuntu2004-README.md
     steps:
       - name: Update apt
         run: sudo apt-get update -y
@@ -20,3 +20,9 @@ jobs:
         run: bash ./build.sh
       - run: ls -al
       - run: ls -al build
+      - name: Deploy
+        run: bash ./deploy.sh
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.DEPLOY_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.DEPLOY_SECRET_ACCESS_KEY }}
+
