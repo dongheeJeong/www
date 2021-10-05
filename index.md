@@ -1,4 +1,6 @@
-# Donghee, Jeong's Website
+---
+title: "Donghee, Jeong's Website"
+---
 
 ## 안녕하세요? 정동희입니다.
 

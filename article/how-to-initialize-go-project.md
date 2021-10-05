@@ -1,4 +1,7 @@
-# How to initialize go project
+---
+title: "How to initialize go project"
+date: "2021-10-05"
+---
 
 매번 찾아보게되어 기록을 남긴다.
 
