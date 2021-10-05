@@ -6,6 +6,11 @@
 
 📧 [mail@dongheejeong.xyz](mailto:mail@dongheejeong.xyz)
 
+
+## 글
+
+* [How to initialize go project](article/how-to-initialize-go-project.html)
+
 ## 나의 링크들
 
 * [AWS WorkMail 웹 메일](https://webmail.mail.us-east-1.awsapps.com/workmail/?organization=dongheejeong-xyz){target="_blank"}
