@@ -13,3 +13,7 @@
 * [Trello 일상 Board](https://trello.com/b/u289k1qi/%EC%9D%BC%EC%83%81-%EC%8A%A4%EC%BC%80%EC%A4%84){target="_blank"}
 
 ---
+
+<a href="https://webmail.mail.us-east-1.awsapps.com/workmail/?organization=dongheejeong-xyz"><img src="/img/mail.gif" alt="mail"></a>
+<a href="https://www.kernel.org/"><img src="/img/linux_now.gif" alt="linux_now"></a>
+<img src="/img/vim.gif" alt="vim">
