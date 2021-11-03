@@ -13,6 +13,8 @@ jobs:
         run: sudo apt-get install -y pandoc
       - name: Checkout
         uses: actions/checkout@master
+      - name: Install pip packages
+        run: pip install -r ./build_requirement.txt
       - name: Build
         run: bash ./build.sh
       - run: ls -al build

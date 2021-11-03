@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>$title$</title>
+		<title> All aritcles </title>
     <meta charset="utf-8">
 		<meta name="author" content="Donghee Jeong">
     <link rel="stylesheet" href="/css/style.css">
@@ -24,21 +24,21 @@
   </style>
 
   <article class="markdown-body">
-    <h1> Category: $category$ </h1>
 
-    $if(articles)$
+		<h1> 전체 글 </h1>
+
+		{% if data.articles is defined and data.articles|length %}
     <ul>
-      $for(articles)$
-      <li><small>$it.date$</small> <a href="/$category$/$it.html_file$">$it.title$</a></li>
-      $endfor$
+			{%- for article in data.articles %}
+			<li><small>{{ article.metadata.date[0][1:-1] }}</small> <a href="/{{ article.category }}/{{ article.fname | replace(".md", ".html") }}">{{ article.metadata.title[0][1:-1] }}</a></li>
+			{% endfor %}
     </ul>
-    $else$
+		{% else %}
     No articles exist
-    $endif$
+		{% endif %}
   </article>
   <p class="credit markdown-body">
     <small>This website uses <a href="https://github.com/hyrious/github-markdown-css">hyrious/github-markdown-css</a> stylesheet.</small><br>
-    <small>Site build commit: <a href="$commit_url$">$commit_sha$</a></small><br>
     <small><a href="/">Go to Home</a></small><br>
   </p>
 </html>

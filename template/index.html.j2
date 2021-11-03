@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Donghee, Jeong’s Website</title>
+    <meta charset="utf-8">
+		<meta name="author" content="Donghee Jeong">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/github-markdown.css">
+  </head>
+
+  <style>
+    .markdown-body {
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+    @media (max-width: 767px) {
+      .markdown-body {
+	padding: 15px;
+      }
+    }
+  </style>
+
+	<nav>
+
+		{%- for category in data.categories %}
+		<a href="/{{ category }}/">{{ category }}</a>
+    {% endfor %}
+	</nav>
+
+  <article class="markdown-body">
+
+		<h1>Donghee, Jeong’s Website</h1>
+
+    <h2 id="안녕하세요-정동희입니다.">안녕하세요? 정동희입니다.</h2>
+    <p>궁금한 점, 하고싶은 말, 무엇이든 전하고 싶은 말이 있다면 아래 메일로 알려주세요.</p>
+    <p>📧 <a href="mailto:mail@dongheejeong.xyz">mail@dongheejeong.xyz</a></p>
+		<h2 id="글">최근 글</small></h2>
+    <ul>
+		  {%- for article in data.recent_articles %}
+			<li><a href="{{ article.category }}/{{ article.fname | replace(".md", ".html") }}">{{ article.metadata.title[0][1:-1] }}</a></li>
+		  {% endfor %}
+    </ul>
+		<p style="text-align:right"><i><small><a href="/all_articles.html" style="color:green">전체 글 보기</a></small></i></p>
+
+    <h2>글 카테고리</h2>
+    <ul>
+			{%- for category in data.categories %}
+			<li><a href="{{ category }}/">{{ category }}</a></li>
+		  {% endfor %}
+    </ul>
+
+		<br>
+    <h2 id="나의-링크들">나의 링크들</h2>
+    <ul>
+    <li><p><a href="https://webmail.mail.us-east-1.awsapps.com/workmail/?organization=dongheejeong-xyz" target="_blank">AWS WorkMail 웹 메일</a></p></li>
+    <li><p><a href="https://trello.com/b/u289k1qi/%EC%9D%BC%EC%83%81-%EC%8A%A4%EC%BC%80%EC%A4%84" target="_blank">Trello 일상 Board</a></p></li>
+    </ul>
+    <hr />
+    <p><a href="https://webmail.mail.us-east-1.awsapps.com/workmail/?organization=dongheejeong-xyz"><img src="/img/mail.gif" alt="mail"></a> <a href="https://www.kernel.org/"><img src="/img/linux_now.gif" alt="linux_now"></a> <img src="/img/vim.gif" alt="vim"></p>
+
+  </article>
+  <p class="credit markdown-body">
+    <small>This website uses <a href="https://github.com/hyrious/github-markdown-css">hyrious/github-markdown-css</a> stylesheet.</small><br>
+		<small>Site build commit: <a href="{{ data.commit_url }}">{{ data.commit_sha }}</a></small><br>
+  </p>
+</html>
+~
+

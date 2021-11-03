@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>$title$</title>
+		<title>$title$</title>
     <meta charset="utf-8">
 		<meta name="author" content="Donghee Jeong">
     <link rel="stylesheet" href="/css/style.css">
@@ -27,14 +27,15 @@
 
 		<h1>$title$</h1>
 
-		<p style="text-align:right"><i><small>$if(date)$Date: $date$$endif$$if(category)$, Category: <a href="/$category$">$category$</a>$endif$</small></i></p>
+		{% if data.article is defined %}
+		<p style="text-align:right"><i><small>Date: {{ data.article.metadata.date[0][1:-1] }}, Category: <a href="/{{ data.article.category }}">{{ data.article.category }}</a></small></i></p>
+		{% endif %}
 
     $body$
 
   </article>
   <p class="credit markdown-body">
 	  <small>This website uses <a href="https://github.com/hyrious/github-markdown-css">hyrious/github-markdown-css</a> stylesheet.</small><br>
-		<small>Site build commit: <a href="$commit_url$">$commit_sha$</a></small><br>
 		<small><a href="/">Go to Home</a></small><br>
 	</p>
 
