@@ -56,7 +56,8 @@ print(f"categories: {categories}")
 #
 # Template root index.html
 #
-print("Templating root index.html")
+print("")
+print("Templating root index.html..")
 template = jinja2.Template(open('template/index.html.j2').read())
 
 data = {
@@ -69,12 +70,14 @@ data = {
 ret = template.render(data=data)
 with open("build/index.html", "w") as html:
     html.write(ret)
+print("Done.")
 
 
 #
 # Template category index.html
 #
-print("Templating category index.html")
+print("")
+print("Templating category index.html..")
 template = jinja2.Template(open('template/category_index.html.j2').read())
 
 for category in categories:
@@ -91,12 +94,14 @@ for category in categories:
     os.mkdir(f"build/{category}", 0o755)
     with open(f"build/{category}/index.html", "w") as html:
         html.write(ret)
+print("Done")
 
 
 #
 # Template all_articles.html
 #
-print("Templating all_articles.html")
+print("")
+print("Templating all_articles.html..")
 template = jinja2.Template(open('template/all_articles.html.j2').read())
 
 data = {
@@ -107,13 +112,14 @@ data = {
 ret = template.render(data=data)
 with open(f"build/all_articles.html", "w") as html:
     html.write(ret)
-
+print("Done")
 
 
 #
 # Template each article
 #
-print("Templating each article")
+print("")
+print("Templating each article..")
 for article in articles:
     print(f"{article}")
 
@@ -132,12 +138,14 @@ for article in articles:
     ret = template.render(data=data)
     with open(f"build/{article.category}/" + article.fname.replace(".md", ".html"), "w") as html:
         html.write(ret)
+print("Done")
 
 
 #
 # Template error.html
 #
-print("Templating error.html")
+print("")
+print("Templating error.html..")
 html_j2 = pypandoc.convert_file(
         'error.md',
         'html',
@@ -149,3 +157,4 @@ template = jinja2.Template(html_j2)
 ret = template.render(data={})
 with open(f"build/error.html", "w") as html:
     html.write(ret)
+print("Done")
