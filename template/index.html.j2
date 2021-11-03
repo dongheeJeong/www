@@ -23,20 +23,15 @@
     }
   </style>
 
-	<nav>
-
-		{%- for category in data.categories %}
-		<a href="/{{ category }}/">{{ category }}</a>
-    {% endfor %}
-	</nav>
-
   <article class="markdown-body">
 
 		<h1>Donghee, Jeong’s Website</h1>
 
-    <h2 id="안녕하세요-정동희입니다.">안녕하세요? 정동희입니다.</h2>
+		<p>안녕하세요? 정동희입니다.</p>
     <p>궁금한 점, 하고싶은 말, 무엇이든 전하고 싶은 말이 있다면 아래 메일로 알려주세요.</p>
     <p>📧 <a href="mailto:mail@dongheejeong.xyz">mail@dongheejeong.xyz</a></p>
+		<br>
+
 		<h2 id="글">최근 글</small></h2>
     <ul>
 		  {%- for article in data.recent_articles %}
