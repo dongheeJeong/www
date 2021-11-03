@@ -11,7 +11,7 @@ title: "Donghee, Jeong's Website"
 
 ## 글
 
-* [How to initialize go project](article/how-to-initialize-go-project.html)
+* [How to initialize go project](go/how-to-initialize-go-project.html)
 
 ## 나의 링크들
 
