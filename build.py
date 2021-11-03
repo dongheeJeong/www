@@ -30,8 +30,6 @@ def get_articles(wd='.'):
     for path in Path(wd).rglob('*.md'):
         fname = path.name
         category = path.parts[-2]
-        print(path)
-
 
         with open(path, "r", encoding="utf-8") as f:
           text = f.read()
@@ -51,8 +49,8 @@ def get_categories(wd="."):
 
 articles = get_articles('article/')
 categories = get_categories('article/')
-print(f"articles: {{articles}}")
-print(f"categories: {{categories}}")
+print(f"articles: {articles}")
+print(f"categories: {categories}")
 
 
 #
@@ -80,7 +78,7 @@ print("Templating category index.html")
 template = jinja2.Template(open('template/category_index.html.j2').read())
 
 for category in categories:
-    print(f"{{category}}")
+    print(f"{category}")
 
     category_articles = [ a for a in articles if a.category == category ]
     data = {
@@ -117,7 +115,7 @@ with open(f"build/all_articles.html", "w") as html:
 #
 print("Templating each article")
 for article in articles:
-    print(f"{{article}}")
+    print(f"{article}")
 
     html_j2 = pypandoc.convert_file(
             f'article/{article.category}/{article.fname}',
