@@ -4,6 +4,11 @@ html {
 
 article {
   border-radius: 30px;
+  letter-spacing: 1px; /* 자간 조정 */
+}
+
+p {
+  line-height: 1.6; /* 행간 조정 */
 }
 
 figcaption {
